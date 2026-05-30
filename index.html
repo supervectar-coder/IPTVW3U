@@ -78,23 +78,29 @@ button:hover{
     <img src="https://i.ibb.co/7dGjZb80/6.jpg" alt="Logo" style="height:40px;">
     SUPERVECTAR LISTAS IPTV EXTERNAS W3U
 </h1>
+
 <div id="notice">
   ⚠️ PARA ACCEDER A ALGUNAS LISTAS NECESITAS ESTAR CONECTADO A UN SERVIDOR VPN:
-  <a href="https://one.one.one.one/es-ES/" target="_blank">Descargar aqui VPN WARP 1.1.1.1</a> 
-
+  <a href="https://one.one.one.one/es-ES/" target="_blank">
+    Descargar aqui VPN WARP 1.1.1.1
+  </a> 
 </div>
 
 <div id="notice">
   ⚠️ Para reproducir las listas en ANDROID es necesario abrirlas en el reproductor externo WISEPLAY:
-  <a href="https://play.google.com/store/apps/details?id=com.wiseplay&hl=es" target="_blank">Descargar WISEPLAY Android</a> |
-  <a href="https://drive.google.com/file/d/1B-xTvZSLkSu6VlFn2dfFj2zJtIkPTy6S/view" target="_blank">Descargar WISEPLAY Android TV</a> 
-  
+  <a href="https://play.google.com/store/apps/details?id=com.wiseplay&hl=es" target="_blank">
+    Descargar WISEPLAY Android
+  </a> |
+  <a href="https://drive.google.com/file/d/1B-xTvZSLkSu6VlFn2dfFj2zJtIkPTy6S/view" target="_blank">
+    Descargar WISEPLAY Android TV
+  </a>
 </div>
 
 <div id="notice">
   ⚠️ Para reproducir las listas en IPHONE/IPAD es necesario abrirlas en el reproductor externo WHATPLAY:
-  <a href="https://apps.apple.com/us/app/whatplay-reproductor-iptv/id6443530611" target="_blank">Descargar WHATPLAY Iphone/Ipad</a> 
-
+  <a href="https://apps.apple.com/us/app/whatplay-reproductor-iptv/id6443530611" target="_blank">
+    Descargar WHATPLAY Iphone/Ipad
+  </a>
 </div>
 
 <div id="listas"></div>
@@ -107,12 +113,11 @@ Cargando listas IPTV...
 
 const listas = [
 
-
     {
         nombre: "🌍 LISTA IPTV SUPERVECTAR (VPN) COPIA ESTA URL EN TU REPRODUCTOR EXTERNO",
         url: "https://pastebin.com/raw/cUxSsp6Z"
     },
-	
+    
     {
         nombre: "🌍 LISTA IPTV SUPERVECTAR (VPN) DESCARGA Y ABRE ESTA LISTA EN TU REPRODUCTOR EXTERNO",
         url: "https://drive.google.com/file/d/18jc5KMPaau0Fx5hcbagpWOyCXpQqlo-d/view"
@@ -148,13 +153,19 @@ function cargarListas(){
 
             <div class="botones">
 
-                <button onclick="abrir('${lista.url}')">
-                    ⬇ DESCARGAR
-                </button>
-
-                <button onclick="copiar('${lista.url}')">
-                    📋 COPIAR URL
-                </button>
+                ${
+                    index === 0
+                    ? `
+                        <button onclick="copiar('${lista.url}')">
+                            📋 COPIAR URL
+                        </button>
+                      `
+                    : `
+                        <button onclick="abrir('${lista.url}')">
+                            ⬇ DESCARGAR
+                        </button>
+                      `
+                }
 
             </div>
         `;
